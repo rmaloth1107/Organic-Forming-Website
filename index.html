@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Farming Business</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #8bc34a;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        .stock, .order-form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"], input[type="date"], input[type="time"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #8bc34a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #7cb342;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Organic Farming Business</h1>
+    </header>
+    <div class="container">
+        <section class="contact-info">
+            <h2>Contact Us</h2>
+            <p>Raj Kumar Maloth<br>Founder & Managing Director<br>Cell: 9100711940</p>
+            <p>Jithmal<br>Chairman<br>Cell: 7842133716</p>
+            <p>Krishna Maloth<br>CEO and Managing Director<br>Cell: 9949199526</p>
+        </section>
+        
+        <section class="stock">
+            <h2>Stock Available</h2>
+            <form action="/upload-stock" method="post" enctype="multipart/form-data">
+                <label for="stock-image">Upload Stock Image</label>
+                <input type="file" id="stock-image" name="stock-image" accept="image/*">
+                
+                <label for="stock-details">Stock Details</label>
+                <textarea id="stock-details" name="stock-details" rows="4" placeholder="Enter stock details..."></textarea>
+                
+                <label for="stock-price">Price per KG</label>
+                <input type="number" id="stock-price" name="stock-price" placeholder="Enter price per KG...">
+                
+                <input type="submit" value="Upload Stock">
+            </form>
+        </section>
+        
+        <section class="order-form">
+            <h2>Place an Order</h2>
+            <form action="/submit-order" method="post">
+                <label for="order-details">Order Details</label>
+                <textarea id="order-details" name="order-details" rows="4" placeholder="Enter the organic vegetables you want to order..."></textarea>
+                
+                <label for="order-quantity">Quantity (in KGs)</label>
+                <input type="number" id="order-quantity" name="order-quantity" placeholder="Enter quantity...">
+                
+                <label for="delivery-date">Preferred Delivery Date</label>
+                <input type="date" id="delivery-date" name="delivery-date">
+                
+                <label for="delivery-time">Preferred Delivery Time</label>
+                <input type="time" id="delivery-time" name="delivery-time">
+                
+                <input type="submit" value="Place Order">
+            </form>
+        </section>
+    </div>
+</body>
+</html>
